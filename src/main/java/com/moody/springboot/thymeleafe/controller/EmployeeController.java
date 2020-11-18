@@ -5,7 +5,9 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 
-import com.moody.springboot.thymeleafe.model.Employee;
+import com.moody.springboot.thymeleafe.entity.Employee;
+import com.moody.springboot.thymeleafe.service.EmployeeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,34 +19,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/employees")
 public class EmployeeController {
 
-    // load employee data
 
-    private List<Employee> theEmployees;
 
-    @PostConstruct
-    private void loadData() {
+    private EmployeeService employeeService;
 
-        // create employees
-        Employee emp1 = new Employee(1, "Leslie", "Andrews", "leslie@luv2code.com");
-        Employee emp2 = new Employee(2, "Emma", "Baumgarten", "emma@luv2code.com");
-        Employee emp3 = new Employee(3, "Avani", "Gupta", "avani@luv2code.com");
-        Employee emp4 = new Employee(4 ,"Ali" , "Dimashk" , "ali@mail.de");
-
-        // create the list
-        theEmployees = new ArrayList<>();
-
-        // add to the list
-        theEmployees.add(emp1);
-        theEmployees.add(emp2);
-        theEmployees.add(emp3);
-        theEmployees.add(emp4);
-
+    @Autowired
+    public EmployeeController(EmployeeService employeeService) {
+        this.employeeService = employeeService;
     }
 
     // add mapping for "/list"
 
     @GetMapping("/list")
     public String listEmployees(Model theModel) {
+
+        //get the Employee from the DataBase
+        List<Employee> theEmployees = employeeService.findAll();
 
         // add to the spring model
         theModel.addAttribute("employees", theEmployees);
