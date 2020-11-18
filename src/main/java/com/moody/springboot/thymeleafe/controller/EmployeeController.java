@@ -1,9 +1,8 @@
 package com.moody.springboot.thymeleafe.controller;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
-import javax.annotation.PostConstruct;
 
 import com.moody.springboot.thymeleafe.entity.Employee;
 import com.moody.springboot.thymeleafe.service.EmployeeService;
@@ -14,14 +13,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
-
 @Controller
 @RequestMapping("/employees")
 public class EmployeeController {
 
 
-
-    private EmployeeService employeeService;
+    private final EmployeeService employeeService;
 
     @Autowired
     public EmployeeController(EmployeeService employeeService) {
