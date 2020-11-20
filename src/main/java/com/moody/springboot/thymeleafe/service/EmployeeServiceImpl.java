@@ -10,7 +10,8 @@ import java.util.Optional;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
-    private final EmployeeRepository employeeRepository;
+
+    private EmployeeRepository employeeRepository;
 
     @Autowired
     public EmployeeServiceImpl(EmployeeRepository theEmployeeService) {
@@ -19,13 +20,23 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 
     @Override
-    public List<Employee> findAll() {
-        return employeeRepository.findAll();
+    public List<Employee> findAll()
+    {
+        return employeeRepository.findAllByOrderByLastNameAsc();
     }
 
     @Override
-    public Optional<Employee> findById(int theId) {
-        return employeeRepository.findById(theId);
+    public Employee findById(int theId) {
+         Optional<Employee> result = employeeRepository.findById(theId);
+
+         Employee theEmployee = null;
+         if (result.isPresent())
+         {
+             theEmployee = result.get();
+         } else // we didn't find the employee
+         throw new RuntimeException("Employee id were not found" + theId);
+
+         return theEmployee;
     }
 
     @Override
@@ -37,5 +48,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     public void deleteById(int theId) {
         employeeRepository.deleteById(theId);
     }
+
+
 
 }
