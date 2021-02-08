@@ -1,4 +1,5 @@
-# ThymeLeafCRUDRealTimeProject
+# Employee-Web-Application:
+(Should be connected TO a DataBase mach the Variables)
 A Web Site Application build with
 - Spring FrameWork 
 - HTML / CSS / Spring
