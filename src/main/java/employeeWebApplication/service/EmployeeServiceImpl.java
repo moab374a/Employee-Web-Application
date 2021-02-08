@@ -1,7 +1,7 @@
-package com.moody.springboot.thymeleafe.service;
+package employeeWebApplication.service;
 
-import com.moody.springboot.thymeleafe.DAO.EmployeeRepository;
-import com.moody.springboot.thymeleafe.entity.Employee;
+import employeeWebApplication.DAO.EmployeeRepository;
+import employeeWebApplication.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

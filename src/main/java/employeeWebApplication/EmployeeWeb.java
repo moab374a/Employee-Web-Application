@@ -1,13 +1,13 @@
-package com.moody.springboot.thymeleafe;
+package employeeWebApplication;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ThymeleafeApplication {
+public class EmployeeWeb {
 
     public static void main(String[] args) {
-        SpringApplication.run(ThymeleafeApplication.class, args);
+        SpringApplication.run(EmployeeWeb.class, args);
     }
 
 }

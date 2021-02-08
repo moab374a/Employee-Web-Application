@@ -1,4 +1,4 @@
-package com.moody.springboot.thymeleafe.entity;
+package employeeWebApplication.entity;
 
 import javax.persistence.*;
 

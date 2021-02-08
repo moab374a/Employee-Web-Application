@@ -1,5 +1,5 @@
-package com.moody.springboot.thymeleafe.service;
-import com.moody.springboot.thymeleafe.entity.Employee;
+package employeeWebApplication.service;
+import employeeWebApplication.entity.Employee;
 
 import java.util.List;
 

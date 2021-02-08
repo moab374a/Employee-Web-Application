@@ -1,4 +1,4 @@
-package com.moody.springboot.thymeleafe.controller;
+package employeeWebApplication.controller;
 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

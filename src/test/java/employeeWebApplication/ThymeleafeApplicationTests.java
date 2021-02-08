@@ -1,4 +1,4 @@
-package com.moody.springboot.thymeleafe;
+package employeeWebApplication;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
